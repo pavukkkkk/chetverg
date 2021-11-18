@@ -4,14 +4,14 @@
 #include <string>
 const double PI = acos(-1.0);
 using namespace std;
-string s(double r, double x) {
+string s(double r, double x, double eps) {
     double s1, s2;
     s1 = PI * r * r;
     s2 = x * x;
-    if (s1 > s2){
+    if (s1 +eps< s2){
         return "krug";
     }
-    else if (s1 < s2) {
+    else if (s1 > s2+eps) {
         return "kvadrat";
     }
     else {
@@ -20,8 +20,9 @@ string s(double r, double x) {
 }
 int main()
 {
+    double eps = 10e-6;
     double x, r;
     cin >> x >> r;
-    cout << s(x, r);
+    cout << s(x, r,eps);
 }
 

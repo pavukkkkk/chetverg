@@ -14,19 +14,16 @@ double arifm(double x, double y) {
 }
 
 bool chto(double a, double b) {
-    if (a > b){
-        return true;
-    }
-    else {
-        return false;
-    }
-
+    double eps = 10e-6;
+    return a > b + eps;
+  
 }
 
 
 
 int main()
 {
+    
     int a, b, c, d;
     cin >> a >> b >> c >> d;
     cout << boolalpha<<chto(arifm(a, b), geom(a, b))<<endl;
